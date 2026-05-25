@@ -1,0 +1,21 @@
+import "./App.css";
+import { useState } from "react";
+import { FaRegMoon, FaSun } from "react-icons/fa";
+
+function App() {
+  const [darkTheme, setDarktheme] = useState(false);
+
+  return (
+    <div className={`container ${darkTheme ? "Dark" : "Light"}`}>
+      <h4>The Current Theme is {darkTheme ? "Dark" : "Light"}</h4>
+
+      {darkTheme ? <FaRegMoon /> : <FaSun />}
+
+      <button onClick={() => setDarktheme(!darkTheme)}>
+        change to {darkTheme ? "Light" : "Dark"}
+      </button>
+    </div>
+  );
+}
+
+export default App;
